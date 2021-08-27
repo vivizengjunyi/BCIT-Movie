@@ -1,0 +1,23 @@
+// Google Fonts - Import
+
+// boostrap
+@import "~bootstrap/scss/bootstrap";
+
+
+
+// Functions
+@import './utilities/functions';
+
+// Variables
+@import './base/variables';
+
+// Utilities
+@import './utilities/minxins';
+
+// Resets
+@import './base/reset';
+
+//Components
+@import './components/header';
+@import './components/pagehome';
+@import './components/footer';

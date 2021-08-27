@@ -1,0 +1,185 @@
+.place-background{
+    position: relative;
+
+    .navSort {
+        display:block;
+        border: 2px solid #cd853f;
+        border-radius: 20px;
+        margin: 20px;
+        font-size: 20px;
+        width: 450px;
+    
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+           
+    
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s ease;
+                padding: 8px;
+                z-index: 11;
+                
+                a:hover {
+                    color: lightblue;
+                }
+            }
+        }
+    }
+
+    .background1 {
+        position:absolute;
+        background: linear-gradient(to right, #dfb993, #cd853f);
+        z-index: 10;
+        height: 38px;
+        width: 84px;
+        border-radius: 20px;
+        transform: translate(20px, -59px);
+        transition: 0.4s;
+    }
+
+    .background2 {
+        position:absolute;
+        background: linear-gradient(to right, #dfb993, #cd853f);
+        z-index: 10;
+        height: 38px;
+        width: 100px;
+        border-radius: 20px;
+        transform: translate(115px, -59px);
+        transition: 0.4s;
+    }
+
+    .background3 {
+        position:absolute;
+        background: linear-gradient(to right, #dfb993, #cd853f);
+        z-index: 10;
+        height: 38px;
+        width: 120px;
+        border-radius: 20px;
+        transform: translate(230px, -59px);
+        transition: 0.4s;
+    }
+
+    .background4 {
+        position:absolute;
+        background: linear-gradient(to right, #dfb993, #cd853f);
+        z-index: 10;
+        height: 38px;
+        width: 100px;
+        border-radius: 20px;
+        transform: translate(370px, -59px);
+        transition: 0.4s;
+    }
+}
+
+
+/* .background {
+    z-index: -1;
+    background: rgba(var(--tmdbDarkBlue), 1);
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: left 0.25s;
+} */
+
+/* .active-tab a {
+    background-color: #cd853f !important;
+    border: 1px solid #cd853f !important;
+    border-radius: 20px;
+    color:#fff;
+} */
+
+
+.movie-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+    
+    height: 500px;
+    box-sizing: content-box;
+    padding-bottom: 20px;
+
+    .movie-poster {
+        position: relative;
+
+        img {
+            height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 8px 8px -4px lightblue;
+        }
+
+        .movieInfoSection {
+            position: absolute;
+            background-color: #000;
+            opacity: 0.8;
+            color: #fff;
+            font-size: 20px;
+            height: 0;
+            overflow: hidden;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: all 0.3s ease;
+            width: 100%;
+
+            .movieInfo {
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .movieTitle {
+                    font-size: 25px;
+                    padding-bottom: 10px;
+                }
+
+                .overviewTitle {
+                    text-decoration: underline;
+                }
+
+                .flex-row {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .start {
+                        color: red;
+                    }
+                }
+
+                .overview {
+                    line-height: 1.6rem;
+                    padding-left: 10px;
+
+                }
+
+                a {
+                    padding-top: 10px;
+                    transition: 0.3s;
+                    display:block;
+                    color: #cd853f;
+
+                    &:hover {
+                        transform: scaleY(1.2);
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    
+        &:hover .movieInfoSection {
+            height: 500px;;
+        }
+    }
+
+    
+        
+}
