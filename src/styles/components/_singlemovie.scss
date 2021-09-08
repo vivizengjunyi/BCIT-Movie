@@ -1,0 +1,76 @@
+.single-movie {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    background-image: url(https://images.plex.tv/photo?blur=33&size=medium-240&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F4n41P5CKHFFkQ3s8VJieNmqUkn7.jpg);
+    background-position: 50%, 50%;
+    background-size: cover;
+    position: relative;
+    
+    &::before {   
+        content: "";
+        background-color: #fff;
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.1;
+}
+
+
+    .single-movie-content {
+        width: 80%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+
+        img{
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            margin-top: 20px;
+        }
+    }
+
+    .single-movie-info {
+        text-align: left;
+        padding: 10px;
+        margin: 10px;
+
+        .movie-title {
+            font-size: 30px;
+            padding-bottom: 10px;
+        }
+
+        .line {
+            content: '';
+            background: linear-gradient(to right, #e7ddd2, #dfb993, #cd853f, #dfb993, #e7ddd2);
+            border-radius: 20px;
+            width: 100%;
+            height: 5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            opacity: .6;
+        }
+
+        .flexRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        &:last-child {
+            line-height: 1.5rem;
+        }
+    }
+}
