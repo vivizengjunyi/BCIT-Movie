@@ -89,15 +89,17 @@ const Slider = () => {
         <div className='outerContainer'>
             {singleSliderMovies.map((singleSliderMovie, index) => (
                 index === current && (
-                    <Link to={`/movie/${singleSliderMovie.id}`}>
-                        <div className='sliderWrapper'>
-                            <div key={index} className='sliderContainer' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${singleSliderMovie.backdrop_path})` }}>
+
+                    <div className='sliderWrapper'>
+                        <div key={index} className='sliderContainer' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${singleSliderMovie.backdrop_path})` }}>
+                            <Link to={`/movie/${singleSliderMovie.id}`}>
                                 <img src={'https://image.tmdb.org/t/p/w500/' + singleSliderMovie.poster_path} alt={singleSliderMovie.title} />
-                                <IoArrowBackCircle onClick={preSlide} className='back' />
-                                <IoArrowForwardCircle onClick={nextSlide} className='next' />
-                            </div>
+                            </Link>
+                            <IoArrowBackCircle onClick={preSlide} className='back' />
+                            <IoArrowForwardCircle onClick={nextSlide} className='next' />
                         </div>
-                    </Link>
+                    </div>
+
                 )
             ))}
         </div>
@@ -109,24 +111,3 @@ const Slider = () => {
 
 //
 export default Slider
-
-
-/*
-                <Carousel>
-            {sliderMovies.map((singleSliderMovie, i) => (
-                            <Carousel.Item interval={1000}>
-                                <img
-                                className="d-block w-100"
-                                src={'https://image.tmdb.org/t/p/w500/' + singleSliderMovie.poster_path}
-                                alt={singleSliderMovie.title}
-                            />
-                            <Carousel.Caption>
-                                <h3>{singleSliderMovie.title}</h3>
-                                <p>{singleSliderMovie.vote_average} | {singleSliderMovie.release_date}</p>
-                                <Link to={`/movie/${singleSliderMovie.id}`}>More Info</Link>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-            ))
-            }
-            }
-        </Carousel> */
