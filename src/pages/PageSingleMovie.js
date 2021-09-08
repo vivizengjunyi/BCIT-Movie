@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import singleMovie from "../components/singleMovie";
+import SingleMovie from "../components/SingleMovie";
 import { API_TOKEN } from "../globals/globalVariables";
 
 const PageSingleMovie = () => {
 
     const [movieData, setMovieData] = useState(null);
 
-    const { id } = useParams;
+    const { id } = useParams();
 
     useEffect(() => {
         const fecthMovie = async () => {
@@ -28,7 +28,7 @@ const PageSingleMovie = () => {
 
     return (
         <div className='single-movie-page'>
-            {movieData !== null && <singleMovie movieObj={movieData} />}
+            {movieData !== null && <SingleMovie movieObj={movieData} />}
         </div>
     )
 }

@@ -45,7 +45,8 @@ const Slider = () => {
 
     }, [current, length]);
 
-    const nextSlide = () => {
+    const nextSlide = (e) => {
+        e.preventDefault();
         if (timeout.current) {
             clearTimeout(timeout.current);
         }
@@ -54,7 +55,8 @@ const Slider = () => {
 
     }
 
-    const preSlide = () => {
+    const preSlide = (e) => {
+        e.preventDefault();
         if (timeout.current) {
             clearTimeout(timeout.current);
         }
@@ -86,17 +88,17 @@ const Slider = () => {
     return (
         <div className='outerContainer'>
             {singleSliderMovies.map((singleSliderMovie, index) => (
-                <Link to={`/movie/${singleSliderMovie.id}`}>
-                    <div className='sliderWrapper'>
-                        {index === current && (
+                index === current && (
+                    <Link to={`/movie/${singleSliderMovie.id}`}>
+                        <div className='sliderWrapper'>
                             <div key={index} className='sliderContainer' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${singleSliderMovie.backdrop_path})` }}>
                                 <img src={'https://image.tmdb.org/t/p/w500/' + singleSliderMovie.poster_path} alt={singleSliderMovie.title} />
                                 <IoArrowBackCircle onClick={preSlide} className='back' />
                                 <IoArrowForwardCircle onClick={nextSlide} className='next' />
                             </div>
-                        )}
-                    </div>
-                </Link>
+                        </div>
+                    </Link>
+                )
             ))}
         </div>
     )

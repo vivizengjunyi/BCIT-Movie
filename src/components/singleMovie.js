@@ -1,6 +1,6 @@
 
 
-const singleMovie = ({ movieObj }) => {
+const SingleMovie = ({ movieObj }) => {
     return (
         <div>
             <div className='single-movie'>
@@ -27,4 +27,4 @@ const singleMovie = ({ movieObj }) => {
     )
 }
 
-export default singleMovie
+export default SingleMovie
