@@ -12,14 +12,14 @@
     
     &::before {   
         content: "";
-        background-color: #fff;
+        background-color: #000;
         background-size: cover;
         position: absolute;
         top: 0px;
         right: 0px;
         bottom: 0px;
         left: 0px;
-        opacity: 0.1;
+        opacity: 0.2;
 }
 
 
@@ -46,9 +46,10 @@
         padding: 10px;
         margin: 10px;
 
-        .movie-title {
+        .title {
             font-size: 30px;
             padding-bottom: 10px;
+            line-height: 1.8rem;
         }
 
         .line {
@@ -59,7 +60,7 @@
             height: 5px;
             margin-top: 20px;
             margin-bottom: 20px;
-            opacity: .6;
+            opacity: .8;
         }
 
         .flexRow {
@@ -67,10 +68,24 @@
             flex-direction: row;
             justify-content: space-between;
             padding-bottom: 10px;
+            font-size: 16px;
+
+            .stick {
+                display: flex;
+                flex-direction: row;
+                
+                .start {
+                    vertical-align:bottom;
+                    color: red;
+                    font-size: 20px;
+                }
+            }
         }
 
         &:last-child {
             line-height: 1.5rem;
         }
     }
+
+    // @media (min-width:
 }
