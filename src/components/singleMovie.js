@@ -4,7 +4,6 @@ const SingleMovie = ({ movieObj }) => {
     return (
         <div>
             <div className='single-movie'>
-                <div className='single-movie-backdrop' style={{ backgroundImage: movieObj.backdrop_path && `url(https://image.tmdb.org/t/p/original/${movieObj.backdrop_path})` }}></div>
                 <div className='single-movie-content'>
                     <div className='single-movie-poster'>
                         {movieObj.poster_path == null ?
@@ -12,7 +11,6 @@ const SingleMovie = ({ movieObj }) => {
                             <img src={`https://image.tmdb.org/t/p/w500/${movieObj.poster_path}`} alt={movieObj.title} />
                         }
                     </div>
-                   
                     <div className='single-movie-info'>
                         <p className='title'>{movieObj.title}</p>
                         <div className='line'></div>
