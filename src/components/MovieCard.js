@@ -34,6 +34,10 @@ function MovieCard({ movieObj, onUpdate, from }) {
                     <img src={noImage} alt="No poster" /> :
                     <img src={`https://image.tmdb.org/t/p/w500/${movieObj.poster_path}`} alt={movieObj.title} />
                 }
+                {from === 'favs' &&
+                <div className='movie-title'>{movieObj.title}</div>
+                }
+
                 {from === 'home' && 
                 <div className="movieInfoSection">
                     <div className='movieInfo'>

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 
-const Nav = ({toggle}) => {
+const Nav = ({ toggle }) => {
     return (
         <nav className='dropdownMenu'>
             <ul>
@@ -8,14 +8,14 @@ const Nav = ({toggle}) => {
                     <NavLink to="/" onClick={toggle}>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/about"  onClick={toggle}>About</NavLink>
+                    <NavLink to="/favs" onClick={toggle}>Favs</NavLink>
+
                 </li>
                 <li>
-                    <NavLink to="/favs" onClick={toggle}>Favs</NavLink>
+                    <NavLink to="/about" onClick={toggle}>About</NavLink>
                 </li>
             </ul>
         </nav>
     )
 }
-
 export default Nav;

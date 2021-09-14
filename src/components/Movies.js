@@ -2,7 +2,7 @@ import MovieCard from "./MovieCard"
 
 const Movies = ({ movieData }) => {
     return (
-        <section className='moviesContainer'>
+        <section className='movies-container'>
             { movieData.map((oneMovie, i) => <MovieCard key={i} movieObj={oneMovie} from='home'/>)}
         </section>
     )

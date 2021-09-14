@@ -38,6 +38,10 @@
             &:hover {
                 color: #cd853f;
             }
+
+            @media (min-width: $breakpointTablet) {
+                display: none;
+            }
         }
 
         .userIcon {
@@ -93,6 +97,10 @@
                     color: #cd853f;
                 }
             }
+        }
+
+        @media (min-width: $breakpointTablet) {
+            display: flex;
         }
     }
 }
