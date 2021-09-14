@@ -103,10 +103,20 @@
     flex-direction: row;
     justify-content: space-around;
     margin: 10px;
-    
     height: 500px;
     box-sizing: content-box;
     padding-bottom: 20px;
+    position:relative;
+
+    .float-right {
+        position:absolute;
+        font-size: 30px;
+        float:right;
+        z-index: 1;
+        color: red;
+        transform: translateX(150px);
+        margin: 5px;
+    }
 
     .movie-poster {
         position: relative;
@@ -182,4 +192,12 @@
 
     
         
+}
+
+@media (min-width: $breakpointTablet) {
+    .mmovie-poster {
+        display: flex;
+        justify-content: space-between;
+    }
+    
 }
