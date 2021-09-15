@@ -26,36 +26,37 @@ function MovieCard({ movieObj, onUpdate, from }) {
     }
     return (
         <div className="movie-card">
-            {getIsFav(favs, movieObj.id) ? 
-                <BsFillHeartFill className='float-right' onClick={() => handleSetFavs(movieObj, true)} /> :
-                <BsHeart className='float-right' onClick={() => handleSetFavs(movieObj, false)}/>}
+            {getIsFav(favs, movieObj.id) ?
+                <BsFillHeartFill className='float-right icon-fav' onClick={() => handleSetFavs(movieObj, true)} /> :
+                <BsHeart className='float-right icon-fav' onClick={() => handleSetFavs(movieObj, false)} />}
             <div className="movie-poster">
                 {movieObj.poster_path === null ?
                     <img src={noImage} alt="No poster" /> :
                     <img src={`https://image.tmdb.org/t/p/w500/${movieObj.poster_path}`} alt={movieObj.title} />
                 }
                 {from === 'favs' &&
-                <div className='movie-title'>{movieObj.title}</div>
+                    <div className='movie-title'>{movieObj.title}</div>
                 }
 
-                {from === 'home' && 
-                <div className="movieInfoSection">
-                    <div className='movieInfo'>
-                        <p className='movieTitle'>{movieObj.title}</p>
-                        <div className='flex-row'>
-                            <p>{movieObj.release_date}</p>
+                {from === 'home' ?
+                    <div className="movieInfoSection">
+                        <div className='movieInfo'>
+                            <p className='movieTitle'>{movieObj.title}</p>
                             <div className='flex-row'>
-                                <AiFillStar className='start' />
-                                <p>{movieObj.vote_average}</p>
+                                <p>{movieObj.release_date}</p>
+                                <div className='flex-row'>
+                                    <AiFillStar className='start' />
+                                    <p>{movieObj.vote_average}</p>
+                                </div>
                             </div>
+                            <p className='overviewTitle'>Overview:</p>
+                            <p className='overview'>{movieObj.overview}</p>
+                            <Link to={`/movie/${movieObj.id}`} >More Info<BiRightArrowAlt /></Link>
                         </div>
-                        <p className='overviewTitle'>Overview:</p>
-                        <p className='overview'>{movieObj.overview}</p>
-                        <Link to={`/movie/${movieObj.id}`} >More Info<BiRightArrowAlt /></Link>
-                    </div>
 
-                </div>
-                }   
+                    </div> : 
+                    <p className='movieTitle2'><Link to={`/movie/${movieObj.id}`} >{movieObj.title}</Link></p>
+                }
             </div>
 
         </div>

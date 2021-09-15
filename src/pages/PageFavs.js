@@ -13,10 +13,11 @@ const PageFavs = () => {
         setFavs(getFavs());
     }
     return (
-        <div style={{top: '100px', position: 'relative'}}>
-             <section className='moviesContainer'>
-            { favs.map((oneMovie, i) => <MovieCard key={i} movieObj={oneMovie}  onUpdate={onUpdate}/>)}
-        </section>
+        <div className='favs-Section' style={{ top: '100px', position: 'relative' }}>
+            <p className='favs-paragraph'>Your favorite movies:</p>
+            <section className='movies-container'>
+                {favs.map((oneMovie, i) => <MovieCard key={i} movieObj={oneMovie} onUpdate={onUpdate} />)}
+            </section>
         </div>
     )
 }
