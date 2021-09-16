@@ -1,5 +1,5 @@
 .flex-column {
-    background-color: #000;
+    background-color: $font-color2;
     display: flex;
     height: 60px;
     position:absolute;
@@ -9,33 +9,31 @@
     z-index: 10;
 
     .flex-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @include flex-row-spcebetween;
         height: 100%;
         align-items: center;
 
         .brand {
-            font-size: xx-large;
+            @include flex-center;
+            font-size: $font-size-brand;
+            font-family: $font-family-heading;
             cursor: pointer;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transform: translateX(5px);
+            transform: translateX(10px);
 
             a:hover {
-                color: #cd853f;
+                color: $backgroundcolor-gradient1;
                 transform: scale(1.1);
             }
 
             @media (min-width:$breakpointTablet) {
-                font-size: 40px;
+                font-size: $font-size-brand2;
+                transform: translateX(20px);
             }
         }
 
         .little-gap {
-            transform: translateX(-5px);
+            transform: translateX(-10px);
 
             @media (min-width: $breakpointTablet) {
                 display: none;
@@ -43,55 +41,54 @@
         }
 
         .burgerMenuIcon {
-            color: #fff;
-            font-size: 40px;
+            color: $font-color1;
+            font-size: $icon-size;
             cursor: pointer;
 
             &:hover {
-                color: #cd853f;
+                color: $backgroundcolor-gradient1;
             }
 
         }
 
         .closeMenuIcon {
-            color: #fff;
-            font-size: 40px;
+            color: $font-color1;
+            font-size: $icon-size;
             transform: translate(-10px, 10px);
             cursor: pointer;
 
             &:hover {
-                color: #cd853f;
+                color: $backgroundcolor-gradient1;
             }
         }
     }
 
     nav {
-        background-color: #000;
+        background-color: $font-color2;
         height: auto;
         box-sizing: border-box;
         ul {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include column-center;
             
 
             &:last-child {
-                padding-bottom: 20px;
+                padding-bottom: $gap1;
             }
                 
             li {
                 padding: 15px 0;
-                font-size: 25px;
+                font-size: $font-size-paragraph;
                 transition: 0.5s ease-in-out;
                 list-style: none;
+                font-family: $font-family-paragraph;
+
         
                 &:hover{
-                    transform: scale(1.1);
+                    transform: $scale;
                 }
 
                 a:hover {
-                    color: #cd853f;
+                    color: $backgroundcolor-gradient1;
                 }
             }
         }
@@ -111,18 +108,16 @@
                 padding-bottom: unset;
             }
             li{
-                font-size: 20px;
+                font-size: $font-size-paragraph;
             }
         }
         @media (min-width: $breakpointTablet) {
             display: flex;
-            margin-right: 30px;
+            margin-right: $gap2;
             align-items: center;
         }
     }
 }
-
-
 
 .outerContainer {
     position: relative;
@@ -154,7 +149,7 @@
         
             &::before {   
                     content: "";
-                    background-color: #000;
+                    background-color: $font-color2;
                     background-size: cover;
                     position: absolute;
                     top: 0px;
@@ -177,17 +172,21 @@
                 position: absolute;
                 top: 50%;
                 z-index: 10;
-                color: #000;
-                font-size: 50px;
+                color: $font-color2;
+                font-size: $icon-size;
                 left: 5px;
-                background-color: #fff;
+                background-color: $font-color1;
                 border-radius: 50%;
                 cursor: pointer;
                 transition: 0.3s;
 
                 &:hover {
-                    transform:scale(1.1);
-                    color: #cd853f;
+                    transform:$scale;
+                    color: $backgroundcolor-gradient1;
+                }
+
+                @media (min-width: $breakpointTablet) {
+                    margin-left: $gap1;
                 }
             }
 
@@ -195,18 +194,22 @@
                 position: absolute;
                 top: 50%;
                 z-index: 10;
-                color: #000;
-                font-size: 50px;
+                color: $font-color2;
+                font-size: $icon-size;
                 right: 5px;
                 top: 50%;
-                background-color: #fff;
+                background-color: $font-color1;
                 border-radius: 50%;
                 cursor: pointer;
                 transition: 0.3s;
 
                 &:hover {
-                    transform:scale(1.1);
-                    color: #cd853f;
+                    transform:$scale;
+                    color: $backgroundcolor-gradient1;
+                }
+
+                @media (min-width: $breakpointTablet) {
+                    margin-right: $gap1;
                 }
             }
         }

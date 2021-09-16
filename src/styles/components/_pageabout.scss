@@ -1,31 +1,30 @@
 .page-about {
-    background: linear-gradient(to left, #1d4350, #a43931);
-    color: #fff;
+    background: linear-gradient(to left, $backgroundcolor-gradient2, $backgroundcolor-gradient1);
+    color: $font-color1;
     margin-top: 60px;
     height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include column-center;
 
     .about-content {
         width: 80%;
-        border: 1px solid #fff;
-        padding: 40px;
+        border: 1px solid $font-color1;
+        padding: $gap3;
 
         @media (min-width: $breakpointDesktop) {
             width: 700px;
         }
 
         .about-gomovie-name {
-            font-size: 30px;
-            padding-bottom: 20px;
+            font-size: $font-size-heading;
+            padding-bottom: $gap1;
+            font-family: $font-family-heading;
         }
 
         p {
-            line-height: 1.6rem;
-            font-size: 20px;
-            color: rgb(194, 183, 183);
+            line-height: $line-height;
+            font-size: $font-size-paragraph;
+            color: $color3;
+            font-family: $font-family-paragraph;
         }
     }
 

@@ -1,67 +1,60 @@
 .favs-Section {
-    background: linear-gradient(to left, #a43931, #1d4350);
+    background: linear-gradient(to left, $backgroundcolor-gradient1, $backgroundcolor-gradient2);
     background-position: 50%, 50%;
     background-size: cover;
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding-top: $gap1;
+    padding-bottom: $gap3;
     margin-top: 60px;
     
     .favs-paragraph {
-        font-size: 1.5em;
-        color: #cd853f;
-        margin-left: 20px;
-        margin-bottom: 30px;
-        text-decoration: underline;
+        font-size: $font-size-heading;
+        color: $font-color1;
+        margin-left: $gap1;
+        margin-bottom: $gap2;
+       
 
         .favs-heart {
-            font-size: 30px;
-            color: red;
+            font-size: $font-size-heading;
+            color: $color1;
+            margin-right: $gap5;
         }
     }
     
     .movieTitle2 {
         position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-center;
         width: 100%;
         height: 50px;
-        bottom: 30px;
-        font-size: 1.5rem;
-        color: #fff;
+        bottom: $gap2;
+        font-size: $font-size-paragraph-bigger;
+        color: $font-color1;
         background-color: rgba(0, 0, 0, 0.7);
-        padding: 20px;
+        padding: $gap1;
+        font-family: $font-size-paragraph-bigger;
     
         a {
             &:hover {
                 transform: scale(1.1);
-                color: #cd853f;
+                color: $color-gradient1;
             }
         }
-    
-        
     }
 
     .no-favs {
         height: 70vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
+        font-family: $font-family-paragraph;
 
             p {
-                font-size: 20px;
-                color: #fff;
+                font-size: $font-size-paragraph;
+                color: $font-color1;
 
                 a {
-                    padding-left: 5px;
+                    padding-left: $gap4;
                     text-decoration: underline;
-                    color:#cd853f;
+                    color:$color-gradient1;
                 }
-            
         }
-
-        
-
     }
 }

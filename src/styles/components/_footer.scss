@@ -1,15 +1,12 @@
 footer {
-    background-color: #000;
-    color: #fff;
-    padding: 30px;
+    background-color: $font-color2;
+    color: $font-color1;
+    padding: $gap2;
     height: 50px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     bottom: 0;
 
     p {
-        font-size: 1.1rem;
-        
+        font-size: $font-size-paragraph;   
     }
 }

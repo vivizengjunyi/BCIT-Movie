@@ -3,29 +3,27 @@
 
     .navSort {
         display:block;
-        border: 2px solid #cd853f;
-        border-radius: 20px;
-        margin: 20px;
-        font-size: 20px;
+        border: 2px solid $backgroundcolor-gradient1;
+        border-radius: $border-radius;
+        margin: $gap1;
+        font-size: $font-size-paragraph;
         width: 450px;
     
         ul {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            @include flex-row-spcebetween;
             align-items: center;
            
     
             li {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include flex-center;
                 transition: 0.3s ease;
                 padding: 8px;
                 z-index: 11;
+                font-family: $font-family-heading;
+                font-size: $font-size-paragraph-smaller;
                 
                 a:hover {
-                    color: lightblue;
+                    color: $color2;
                 }
             }
         }
@@ -33,45 +31,45 @@
 
     .background1 {
         position:absolute;
-        background: linear-gradient(to right, #dfb993, #cd853f);
+        background: $background;
         z-index: 10;
         height: 38px;
         width: 84px;
-        border-radius: 20px;
-        transform: translate(20px, -59px);
+        border-radius: $border-radius;
+        transform: translate(20px, -58px);
         transition: 0.4s;
     }
 
     .background2 {
         position:absolute;
-        background: linear-gradient(to right, #dfb993, #cd853f);
+        background: $background;
         z-index: 10;
         height: 38px;
         width: 100px;
-        border-radius: 20px;
-        transform: translate(115px, -59px);
+        border-radius: $border-radius;
+        transform: translate(115px, -58px);
         transition: 0.4s;
     }
 
     .background3 {
         position:absolute;
-        background: linear-gradient(to right, #dfb993, #cd853f);
+        background: $background;
         z-index: 10;
         height: 38px;
         width: 120px;
-        border-radius: 20px;
-        transform: translate(230px, -59px);
+        border-radius: $border-radius;
+        transform: translate(230px, -58px);
         transition: 0.4s;
     }
 
     .background4 {
         position:absolute;
-        background: linear-gradient(to right, #dfb993, #cd853f);
+        background: $background;
         z-index: 10;
         height: 38px;
         width: 100px;
-        border-radius: 20px;
-        transform: translate(370px, -59px);
+        border-radius: $border-radius;
+        transform: translate(370px, -58px);
         transition: 0.4s;
     }
 }
@@ -82,23 +80,21 @@
     justify-content: center;
 
     .movie-card {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 10px;
+        @include flex-row-spacearound;
+        margin: $gap5;
         height: 500px;
         box-sizing: content-box;
-        padding-bottom: 20px;
+        padding-bottom: $gap1;
         position:relative;
 
         .float-right {
             position:absolute;
-            font-size: 30px;
+            font-size: $font-size-heading;
             float:right;
             z-index: 1;
-            color: red;
+            color: $color1;
             transform: translateX(150px);
-            margin: 5px;
+            margin: $gap4;
         }
 
         .movie-poster {
@@ -106,16 +102,15 @@
 
             img {
                 height: 500px;
-                border-radius: 10px;
-                box-shadow: 8px 8px 8px -4px lightblue;
+                border-radius: $border-radius-small;
+                box-shadow: 8px 8px 8px -4px $color2;
             }
 
             .movieInfoSection {
                 position: absolute;
-                background-color: #000;
+                background-color: $font-color2;
                 opacity: 0.8;
-                color: #fff;
-                font-size: 20px;
+                color: $font-color1;
                 height: 0;
                 overflow: hidden;
                 bottom: 0;
@@ -125,14 +120,14 @@
                 width: 100%;
 
                 .movieInfo {
-                    padding: 10px;
+                    padding: $gap5;
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
+                    gap: $gap5;
 
                     .movieTitle {
-                        font-size: 25px;
-                        padding-bottom: 10px;
+                        font-size: $font-size-paragraph-bigger;
+                        padding-bottom: $gap5;
                     }
 
                     .overviewTitle {
@@ -140,29 +135,30 @@
                     }
 
                     .flex-row {
-                        display: flex;
-                        justify-content: space-between;
+                        @include flex-row-spcebetween;
 
                         .start {
-                            color: red;
+                            color: $color1;
                         }
                     }
 
                     .overview {
-                        line-height: 1.6rem;
-                        padding-left: 10px;
+                        line-height: $line-height;
+                        padding-left: $gap5;
 
                     }
 
                     a {
-                        padding-top: 10px;
+                        padding-top: $gap5;
                         transition: 0.3s;
                         display:block;
-                        color: #cd853f;
+                        color: $backgroundcolor-gradient1;
+                        padding-left: $gap5;
+                        font-family: $font-family-paragraph;
 
                         &:hover {
-                            transform: scaleY(1.2);
-                            color:#fff;
+                            transform: $scale;
+                            color:$font-color1;
                         }
                     }
                 }

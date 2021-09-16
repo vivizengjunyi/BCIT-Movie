@@ -4,63 +4,59 @@
     padding: 0;
     display: flex;
     justify-content: center;
-    background: linear-gradient(to bottom, #a43931, #1d4350);
+    background: linear-gradient(to bottom, $backgroundcolor-gradient1, $backgroundcolor-gradient2);
     background-position: 50%, 50%;
     background-size: cover;
     position: relative;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    color: #fff;
+    padding-top: $gap3;
+    padding-bottom: $gap3;
+    color: $font-color1;
 
 
     .single-movie-content {
         width: 80%;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        display:flex;
-        flex-direction: column;
-        text-align: center;
-        padding-top: 30px;
+        @include column-center;
+        border-radius: $border-radius-small;
+        padding-top: $gap2;
 
         img{
-            width: 80%;
-            border-radius: 20px;
+            width: 300px;
+            border-radius: $border-radius;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-            margin-top: 20px;
+            margin-top: $gap1;
         }
     }
 
     .single-movie-info {
         text-align: left;
-        padding: 10px;
-        margin: 10px;
+        padding: $gap5;
+        margin: $gap5;
 
         .title {
-            font-size: 30px;
-            padding-bottom: 10px;
-            line-height: 1.8rem;
+            font-size: $font-size-heading;
+            font-family: $font-family-heading;
+            padding-bottom: $gap5;
+            line-height: $line-height-bigger;
+            color: $font-color1;
         }
 
         .line {
             content: '';
-            background: linear-gradient(to right, #e7ddd2, #dfb993, #cd853f, #dfb993, #e7ddd2);
-            border-radius: 20px;
+            background: radial-gradient(circle,$backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2);
+            border-radius: $border-radius;
             width: 100%;
             height: 5px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin-top: $gap1;
+            margin-bottom: $gap1;
             opacity: .8;
         }
 
         .flexRow {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding-bottom: 10px;
-            font-size: 16px;
-            font-size: 20px;
+            @include flex-row-spcebetween;
+            padding-bottom: $gap5;
+            font-size: $font-size-paragraph;
+            font-family: $font-family-paragraph;
+            color: $font-color1;
 
             .stick {
                 display: flex;
@@ -68,15 +64,17 @@
                 
                 .start {
                     vertical-align:bottom;
-                    color: red;
-                    font-size: 20px;
+                    color: $color1;
+                    font-size: $font-size-paragraph;
                 }
             }
         }
 
         &:last-child {
-            line-height: 1.5rem;
-            font-size: 20px;
+            line-height: $line-height;
+            font-size: $font-size-paragraph;
+            font-family: $font-family-paragraph;
+            color: $color3;
         }
     }
  
@@ -91,8 +89,8 @@
             .single-movie-content {
                 display: flex;
                 flex-direction: row;
-                gap: 20px;
-                margin-bottom: 20px;
+                gap: $gap1;
+                margin-bottom: $gap1;
 
                 .single-movie-poster {
                     max-width: 400px;

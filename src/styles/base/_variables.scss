@@ -1,10 +1,31 @@
-// App style Settings
-
 //Colors
+$color-gradient1: #cd853f;
+$color-gradient2: #dfb993;
+$background:linear-gradient(to right, #a43931, #1d4350);
+$backgroundcolor-gradient1: #a43931;
+$backgroundcolor-gradient2: #1d4350;
+$font-color1: #fff;
+$font-color2: #000;
+$color1: red;
+$color2: lightblue;
+$color3: rgb(194, 183, 183);
 
+//padding or margin
+$gap1: 20px;
+$gap2: 30px;
+$gap3: 40px;
+$gap4: 5px;
+$gap5: 10px;
 
+//burger menu size
+$icon-size: 40px;
 
+//transform
+$scale: scale(1.1);
 
+//border radius
+$border-radius: 20px;
+$border-radius-small: 10px;
 
 //media query breakpoints
 $breakpointMobile: 33.75rem;//540
