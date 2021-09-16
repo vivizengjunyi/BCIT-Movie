@@ -1,12 +1,12 @@
 const PageAbout = () => {
     return (
-        <div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <h2>About GoMovie</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga autem, expedita inventore reprehenderit, voluptates dolorem sequi, nihil ducimus optio minus error saepe. Itaque excepturi ut minima perferendis suscipit fugiat a?</p>
+        <div className='page-about'>
+            <div className='about-content'>
+                <div className='about-gomovie-name'>About GoMovie</div>
+                <p>GoMovie is a community showing movie database. Every piece of data has been added by our amazing community dating back to 2008. GoMovie's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different.</p>
+            </div>
+
+
         </div>
     )
 }

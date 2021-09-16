@@ -3,8 +3,6 @@ import { NavLink, useLocation } from 'react-router-dom';
 import Slider from './Slider';
 import Nav from './Nav';
 import { title } from '../globals/globalVariables';
-//import Membership from './Membership'
-import { FaUserAlt } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { VscError } from 'react-icons/vsc';
 import { useState } from 'react';
@@ -30,18 +28,19 @@ const Header = () => {
             }
             <div class='flex-column'>
                 <div className='flex-row'>
-                    <p>
+                    <div className="brand">
                         <NavLink to="/">{title}</NavLink>
-                    </p>
+                    </div>
+                    <Nav show={true} />
                     {burgerMenuShow === true ? (
                         <div className='little-gap'>
                             <GiHamburgerMenu className='burgerMenuIcon' onClick={toggle} />
-                            <FaUserAlt className='userIcon' />
                         </div>
                     ) : <VscError class='closeMenuIcon' onClick={toggle} />
                     }
                 </div>
                 {burgerMenuShow === false && <Nav toggle={toggle} />}
+                
             </div>
         </header>
     )

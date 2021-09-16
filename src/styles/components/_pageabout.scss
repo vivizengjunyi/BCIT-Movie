@@ -1,0 +1,33 @@
+.page-about {
+    background: linear-gradient(to left, #1d4350, #a43931);
+    color: #fff;
+    margin-top: 60px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .about-content {
+        width: 80%;
+        border: 1px solid #fff;
+        padding: 40px;
+
+        @media (min-width: $breakpointDesktop) {
+            width: 700px;
+        }
+
+        .about-gomovie-name {
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6rem;
+            font-size: 20px;
+            color: rgb(194, 183, 183);
+        }
+    }
+
+    
+}

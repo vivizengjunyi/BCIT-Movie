@@ -1,8 +1,8 @@
 const Footer = () => {
     return (
-        <div>
-            
-        </div>
+        <footer>
+            <p>&copy; GoMovie</p>
+        </footer>
     )
 }
 

@@ -12,22 +12,34 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        height: 100%;
         align-items: center;
 
-        p {
-            transform: translate(10px, 15px) ;
+        .brand {
             font-size: xx-large;
             cursor: pointer;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(5px);
 
             a:hover {
                 color: #cd853f;
                 transform: scale(1.1);
             }
+
+            @media (min-width:$breakpointTablet) {
+                font-size: 40px;
+            }
         }
 
         .little-gap {
-            gap: 5px;
-            transform: translate(-10px,13px);
+            transform: translateX(-5px);
+
+            @media (min-width: $breakpointTablet) {
+                display: none;
+            }
         }
 
         .burgerMenuIcon {
@@ -39,20 +51,6 @@
                 color: #cd853f;
             }
 
-            @media (min-width: $breakpointTablet) {
-                display: none;
-            }
-        }
-
-        .userIcon {
-            color: #fff;
-            font-size: 25px;
-            margin-left: 10px;
-            cursor: pointer;
-
-            &:hover {
-                color: #cd853f;
-            }
         }
 
         .closeMenuIcon {
@@ -71,7 +69,6 @@
         background-color: #000;
         height: auto;
         box-sizing: border-box;
-        
         ul {
             display: flex;
             flex-direction: column;
@@ -103,18 +100,38 @@
             display: flex;
         }
     }
+    .show-nav{
+        display:none;
+
+        ul {
+            flex-direction: row;
+            width: 300px;
+            justify-content: space-between;
+            &:last-child {
+                padding-bottom: unset;
+            }
+            li{
+                font-size: 20px;
+            }
+        }
+        @media (min-width: $breakpointTablet) {
+            display: flex;
+            margin-right: 30px;
+            align-items: center;
+        }
+    }
 }
 
 
 
 .outerContainer {
     position: relative;
-    height: 100vh;
+    height: 80vh;
     max-height: 1100px;
     overflow: hidden;
 
     .sliderWrapper {
-        height: 100vh;
+        height: 80vh;
         max-height: 1100px;
         position:absolute;
         top: 0;
@@ -131,7 +148,7 @@
             left: 0;
             background-size: cover;
             //background-repeat: no-repeat;
-            height: 100vh;
+            height: 80vh;
             cursor: pointer;
 
         
@@ -148,11 +165,11 @@
             }
         
             img {
-                width: 500px;
+                width: 420px;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%, -47%);
+                transform: translate(-50%, -45.5%);
                 overflow:hidden;
             }
 

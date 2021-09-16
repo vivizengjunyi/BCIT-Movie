@@ -2,27 +2,15 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    margin-top: 80px;
     display: flex;
     justify-content: center;
-    background-image: url(https://images.plex.tv/photo?blur=33&size=medium-240&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F4n41P5CKHFFkQ3s8VJieNmqUkn7.jpg);
+    background: linear-gradient(to bottom, #a43931, #1d4350);
     background-position: 50%, 50%;
     background-size: cover;
     position: relative;
     padding-top: 40px;
     padding-bottom: 40px;
-    
-    &::before {   
-        content: "";
-        background-color: #000;
-        background-size: cover;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.1;
-}
+    color: #fff;
 
 
     .single-movie-content {
@@ -34,6 +22,7 @@
         display:flex;
         flex-direction: column;
         text-align: center;
+        padding-top: 30px;
 
         img{
             width: 80%;
