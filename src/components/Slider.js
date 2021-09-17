@@ -35,7 +35,7 @@ const Slider = () => {
         const nextSlide = () => {
             setCurrent(current => (current === length - 1 ? 0 : current + 1));
         }
-        timeout.current = setTimeout(nextSlide, 2000);
+        timeout.current = setTimeout(nextSlide, 50000);
 
         return function () {
             if (timeout.current) {
@@ -71,17 +71,16 @@ const Slider = () => {
         <div className='outerContainer'>
             {singleSliderMovies.map((singleSliderMovie, index) => (
                 index === current && (
-
                     <div className='sliderWrapper'>
-                        <div key={index} className='sliderContainer' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${singleSliderMovie.backdrop_path})` }}>
-                            <Link to={`/movie/${singleSliderMovie.id}`}>
-                                <img src={'https://image.tmdb.org/t/p/w500/' + singleSliderMovie.poster_path} alt={singleSliderMovie.title} />
-                            </Link>
-                            <IoArrowBackCircle onClick={preSlide} className='back' />
-                            <IoArrowForwardCircle onClick={nextSlide} className='next' />
-                        </div>
+                        <Link to={`/movie/${singleSliderMovie.id}`}>
+                            <div key={index} className='sliderContainer' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${singleSliderMovie.backdrop_path})` }}>
+                                <img src={'https://image.tmdb.org/t/p/w500/' + singleSliderMovie.poster_path} alt={singleSliderMovie.title} className="slider-img" />
+                                <div className="slider-title">{singleSliderMovie.title}</div>
+                                <IoArrowBackCircle onClick={preSlide} className='back' />
+                                <IoArrowForwardCircle onClick={nextSlide} className='next' />
+                            </div>
+                        </Link>
                     </div>
-
                 )
             ))}
         </div>

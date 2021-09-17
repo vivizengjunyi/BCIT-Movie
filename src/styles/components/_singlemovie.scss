@@ -11,19 +11,34 @@
     padding-top: $gap3;
     padding-bottom: $gap3;
     color: $font-color1;
+    height: 100vh;
+    margin-top: $gap2;
 
 
     .single-movie-content {
         width: 80%;
         @include column-center;
-        border-radius: $border-radius-small;
-        padding-top: $gap2;
 
         img{
-            width: 300px;
+            height: 350px;
             border-radius: $border-radius;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-            margin-top: $gap1;
+            margin-top: $gap2;
+        }
+
+        @media (min-width: $breakpointMobile) {
+            width: 80%;
+            @include column-center;
+            border-radius: $border-radius-small;
+            padding-top: 40px;
+    
+            img{
+                width: 300px;
+                height: auto;
+                border-radius: $border-radius;
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+                
+            }
         }
     }
 
@@ -33,11 +48,21 @@
         margin: $gap5;
 
         .title {
-            font-size: $font-size-heading;
+            font-size: $font-size-paragraph-bigger;
             font-family: $font-family-heading;
             padding-bottom: $gap5;
             line-height: $line-height-bigger;
             color: $font-color1;
+        }
+
+        .icon-fav {
+            color: red;
+            font-size: $font-size-paragraph-bigger;
+            vertical-align: middle;
+
+            .red {
+                background-color: red;
+            }
         }
 
         .line {
@@ -54,7 +79,7 @@
         .flexRow {
             @include flex-row-spcebetween;
             padding-bottom: $gap5;
-            font-size: $font-size-paragraph;
+            font-size: $font-size-paragraph-smaller;
             font-family: $font-family-paragraph;
             color: $font-color1;
 
@@ -72,11 +97,66 @@
 
         &:last-child {
             line-height: $line-height;
-            font-size: $font-size-paragraph;
+            font-size: $font-size-paragraph-smaller;
             font-family: $font-family-paragraph;
             color: $color3;
         }
-    }
+
+        @media (min-width: $breakpointMobile) {
+            text-align: left;
+            padding: $gap5;
+            margin: $gap5;
+
+            .title {
+                font-size: $font-size-heading;
+                font-family: $font-family-heading;
+                padding-bottom: $gap5;
+                line-height: $line-height-bigger;
+                color: $font-color1;
+            }
+
+            .icon-fav {
+                font-size: $font-size-heading;
+            }
+
+            .line {
+                content: '';
+                background: radial-gradient(circle,$backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2);
+                border-radius: $border-radius;
+                width: 100%;
+                height: 5px;
+                margin-top: $gap1;
+                margin-bottom: $gap1;
+                opacity: .8;
+            }
+
+            .flexRow {
+                @include flex-row-spcebetween;
+                padding-bottom: $gap5;
+                font-size: $font-size-paragraph;
+                font-family: $font-family-paragraph;
+                color: $font-color1;
+
+                .stick {
+                    display: flex;
+                    flex-direction: row;
+                    
+                    .start {
+                        vertical-align:bottom;
+                        color: $color1;
+                        font-size: $font-size-paragraph;
+                    }
+                }
+            }
+
+            &:last-child {
+                line-height: $line-height;
+                font-size: $font-size-paragraph;
+                font-family: $font-family-paragraph;
+                color: $color3;
+            }
+            }
+        }
  
 }
 

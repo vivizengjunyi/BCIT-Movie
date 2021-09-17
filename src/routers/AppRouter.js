@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import PageHome from '../pages/PageHome';
 import PageAbout from '../pages/PageAbout';
 import PageFavs from '../pages/PageFavs';
+import PageSearch from '../pages/PageSearch';
 import PageSingleMovie from '../pages/PageSingleMovie';
 
 function AppRouter() {
@@ -18,6 +19,7 @@ function AppRouter() {
             <Route path="/sort/:categoryId"><PageHome /></Route>
             <Route path="/about"><PageAbout /></Route>
             <Route path="/favs"><PageFavs /></Route>
+            <Route path="/search"><PageSearch /></Route>
             <Route path="/movie/:id"><PageSingleMovie /></Route>
           </Switch>
         </main>

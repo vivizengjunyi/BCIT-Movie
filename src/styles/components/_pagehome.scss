@@ -1,6 +1,5 @@
 .place-background{
     position: relative;
-
     .navSort {
         display:block;
         border: 2px solid $backgroundcolor-gradient1;
@@ -12,15 +11,12 @@
         ul {
             @include flex-row-spcebetween;
             align-items: center;
-           
-    
             li {
                 @include flex-center;
                 transition: 0.3s ease;
                 z-index: 11;
-                font-family: $font-family-heading;
+                font-family: $font-family-paragraph;
                 font-size: 12px;
-                
                 a:hover {
                     color: $color2;
                 }
@@ -92,7 +88,7 @@
             height: 38px;
             width: 100px;
             border-radius: $border-radius;
-            transform: translate(115px, -58px);
+            transform: translate(117.5px, -58px);
             transition: 0.4s;
         }
     }
@@ -114,7 +110,7 @@
             height: 38px;
             width: 120px;
             border-radius: $border-radius;
-            transform: translate(230px, -58px);
+            transform: translate(232px, -58px);
             transition: 0.4s;
         }
     }
@@ -134,9 +130,9 @@
             background: $background;
             z-index: 10;
             height: 38px;
-            width: 100px;
+            width: 102px;
             border-radius: $border-radius;
-            transform: translate(370px, -58px);
+            transform: translate(368px, -58px);
             transition: 0.4s;
         }
     }
@@ -155,10 +151,6 @@
         padding-bottom: $gap1;
         position:relative;
 
-        @media (min-width: $breakpointMobile) {
-            height: 500px;
-        }
-
         .float-right {
             position:absolute;
             font-size: $font-size-heading;
@@ -167,10 +159,6 @@
             color: $color1;
             transform: translateX(113px);
             margin: $gap4;
-
-            @media (min-width: $breakpointMobile) {
-                transform: translateX(145px);
-            }
         }
 
         .movie-poster {
@@ -180,11 +168,7 @@
                 width: 100%;
                 height: 400px;
                 border-radius: $border-radius-small;
-                box-shadow: 8px 8px 8px -4px $color2;
-
-                @media (min-width: $breakpointMobile) {
-                    height: 500px;
-                }
+                box-shadow: 1px 0px 8px 6px #353517;
             }
 
             .movieInfoSection {
@@ -207,16 +191,18 @@
                     gap: $gap5;
 
                     .movieTitle {
-                        font-size: $font-size-paragraph-bigger;
+                        font-size: $font-size-paragraph;
                         padding-bottom: $gap5;
                     }
 
                     .overviewTitle {
                         text-decoration: underline;
+                        font-size: $font-size-paragraph-smaller;
                     }
 
                     .flex-row {
                         @include flex-row-spcebetween;
+                        font-size: $font-size-paragraph-smaller;
 
                         .start {
                             color: $color1;
@@ -228,10 +214,11 @@
                         padding-left: $gap5;
                         display: -webkit-box;
                         max-width: 300px;
-                        -webkit-line-clamp: 8;
+                        -webkit-line-clamp: 5;
                         -webkit-box-orient: vertical;
                         overflow: hidden;
                         word-break: break-all;
+                        font-size: $font-size-paragraph-smaller;
                     }
 
                     a {
@@ -241,9 +228,9 @@
                         color: $backgroundcolor-gradient1;
                         padding-left: $gap5;
                         font-family: $font-family-paragraph;
+                        font-size: $font-size-paragraph-smaller;
 
                         &:hover {
-                            transform: $scale;
                             color:$font-color1;
                         }
                     }
@@ -258,5 +245,43 @@
                 }
             }
         }           
+    }
+}
+
+@media (min-width: $breakpointMobile) {
+    .movies-container {
+
+        .movie-card {
+            height: 500px;
+        }
+
+        .float-right {
+            transform: translateX(145px);
+        }
+
+        img {
+            height: 500px;
+        }
+
+        .movieTitle {
+            font-size: $font-size-paragraph-bigger;
+        }
+
+        .overviewTitle {
+            font-size: $font-size-paragraph;
+        }
+
+        .flex-row {
+            font-size: $font-size-paragraph;
+        }
+
+        .overview {
+            font-size: $font-size-paragraph;
+        }
+
+        a {
+            font-size: $font-size-paragraph-smaller;
+        }
+
     }
 }

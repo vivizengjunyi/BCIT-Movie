@@ -6,6 +6,7 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 import { BsFillHeartFill } from 'react-icons/bs';
 import { BsHeart } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
+
 function getIsFav(arr, id) {
     if (arr.length === 0) {
         return false;
@@ -13,7 +14,7 @@ function getIsFav(arr, id) {
     // Checks whether the object is favourited
     return arr.some((item) => item.id === id);
 }
-function MovieCard({ movieObj, onUpdate, from }) {
+function MovieCard({ movieObj, onUpdate, showDetail }) {
     const { getFavs, actions } = globalAppState;
     const [favs, setFavs] = useState([])
     useEffect(() => {
@@ -34,14 +35,11 @@ function MovieCard({ movieObj, onUpdate, from }) {
                     <img src={noImage} alt="No poster" /> :
                     <img src={`https://image.tmdb.org/t/p/w500/${movieObj.poster_path}`} alt={movieObj.title} />
                 }
-                {from === 'favs' &&
-                    <div className='movie-title'>{movieObj.title}</div>
-                }
-
-                {from === 'home' ?
+                
+                {showDetail ?
                     <div className="movieInfoSection">
                         <div className='movieInfo'>
-                            <p className='movieTitle'>{movieObj.title}</p>
+                            <p className='movieTitle'>{movieObj.title}</p> 
                             <div className='flex-row'>
                                 <p>{movieObj.release_date}</p>
                                 <div className='flex-row'>
@@ -54,9 +52,10 @@ function MovieCard({ movieObj, onUpdate, from }) {
                             <Link to={`/movie/${movieObj.id}`} >More Info<BiRightArrowAlt /></Link>
                         </div>
 
-                    </div> : 
-                    <p className='movieTitle2'><Link to={`/movie/${movieObj.id}`} >{movieObj.title}</Link></p>
+                    </div> : null
                 }
+
+                <p className='movieTitle2'><Link to={`/movie/${movieObj.id}`} >{movieObj.title}</Link></p>
             </div>
 
         </div>
