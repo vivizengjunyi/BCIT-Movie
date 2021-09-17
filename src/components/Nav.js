@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import { FaSearch } from 'react-icons/fa';
 
 const Nav = ({ toggle, show = false }) => {
     const handleClick = toggle || (() => {})
@@ -15,6 +16,10 @@ const Nav = ({ toggle, show = false }) => {
                 <li>
                     <NavLink to="/about" onClick={handleClick}>About</NavLink>
                 </li>
+                <li>
+                    <FaSearch className='search-icon' />
+                </li>
+
             </ul>
         </nav>
     )

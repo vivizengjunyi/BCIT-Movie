@@ -6,25 +6,37 @@
     @include column-center;
 
     .about-content {
-        width: 80%;
+        width: 300px;
         border: 1px solid $font-color1;
         padding: $gap3;
+
+        @media (min-width: $breakpointMobile) {
+            width: 80%;
+        }
 
         @media (min-width: $breakpointDesktop) {
             width: 700px;
         }
 
         .about-gomovie-name {
-            font-size: $font-size-heading;
+            font-size: $font-size-paragraph-bigger;
             padding-bottom: $gap1;
             font-family: $font-family-heading;
+
+            @media (min-width: $breakpointMobile) {
+                font-size: $font-size-heading;
+            }
         }
 
         p {
             line-height: $line-height;
-            font-size: $font-size-paragraph;
+            font-size: $font-size-paragraph-smaller;
             color: $color3;
             font-family: $font-family-paragraph;
+
+            @media (min-width: $breakpointMobile) {
+                font-size: $font-size-paragraph;
+            }
         }
     }
 

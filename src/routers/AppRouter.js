@@ -14,6 +14,7 @@ function AppRouter() {
         <main>
           <Switch>
             <Route path="/" exact><PageHome /></Route>
+            <Route path="/index.html" exact><PageHome /></Route>
             <Route path="/sort/:categoryId"><PageHome /></Route>
             <Route path="/about"><PageAbout /></Route>
             <Route path="/favs"><PageFavs /></Route>
