@@ -11,12 +11,12 @@
     padding-top: $gap3;
     padding-bottom: $gap3;
     color: $font-color1;
-    height: 100vh;
     margin-top: $gap2;
+    font-family: $font-family-paragraph;
 
 
     .single-movie-content {
-        width: 80%;
+        width: 90%;
         @include column-center;
 
         img{
@@ -33,7 +33,7 @@
             padding-top: 40px;
     
             img{
-                width: 300px;
+                width: 390px;
                 height: auto;
                 border-radius: $border-radius;
                 box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -46,40 +46,57 @@
         text-align: left;
         padding: $gap5;
         margin: $gap5;
+        font-family: $font-family-paragraph;
 
         .title {
-            font-size: $font-size-paragraph-bigger;
+            font-size: $font-size-paragraph;
             font-family: $font-family-heading;
             padding-bottom: $gap5;
             line-height: $line-height-bigger;
-            color: $font-color1;
+            color: $font-color3;
+            font-weight: bold;
         }
 
         .icon-fav {
-            color: red;
+            color: $color1;
             font-size: $font-size-paragraph-bigger;
-            vertical-align: middle;
 
             .red {
-                background-color: red;
+                background-color: $color1;
             }
+        }
+
+        .genres {
+            color: $color-gradient1;
+            font-size: 15px;
+            font-family: $font-family-paragraph;
+            display: flex;
+            flex-direction: row;
+            gap: $gap5;
+            padding-bottom: $gap5;
+            
+        }
+
+        .tagline {
+            margin-top: $gap4;
+            margin-bottom: $gap5;
         }
 
         .line {
             content: '';
-            background: radial-gradient(circle,$backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2);
+            background: radial-gradient(circle,$backgroundcolor-gradient1, $backgroundcolor-gradient2, );
             border-radius: $border-radius;
             width: 100%;
             height: 5px;
-            margin-top: $gap1;
-            margin-bottom: $gap1;
+            margin-top: $gap2;
+            margin-bottom: $gap2;
             opacity: .8;
         }
 
         .flexRow {
             @include flex-row-spcebetween;
             padding-bottom: $gap5;
-            font-size: $font-size-paragraph-smaller;
+            font-size: 15px;
             font-family: $font-family-paragraph;
             color: $font-color1;
 
@@ -90,16 +107,73 @@
                 .start {
                     vertical-align:bottom;
                     color: $color1;
-                    font-size: $font-size-paragraph;
+                    font-size: 15px;
                 }
             }
         }
 
-        &:last-child {
+        .overview-title {
+            font-size:$font-size-paragraph;
+            font-family: $font-family-heading;
+            font-family:30px;
+            padding-bottom: $gap5;
+            color: $font-color3;
+            font-weight: bold;
+            padding-top: 10px;
+        }
+
+        .overview {
             line-height: $line-height;
-            font-size: $font-size-paragraph-smaller;
+            font-size: 15px;
             font-family: $font-family-paragraph;
             color: $color3;
+        }
+
+        .cast {
+
+            .cast-title {
+                font-size: 20px;
+                padding-top: $gap1;
+                font-family: $font-family-heading;
+                color: $font-color3;
+                font-weight: bold;
+            }
+
+            .cast-layout {
+                display:flex;
+                flex-direction: row;
+                gap: $gap4;
+                flex-wrap: wrap;
+
+                .cast-detail {
+                    display: flex;
+                    flex-direction: column;
+                    justify-self: center;
+                    align-items: center;
+                    padding-right: $gap5;
+
+                    img {
+                        height: 90px;
+                        border-radius: 10px;
+                    }
+
+                    .cast-name {
+                        color:$font-color3;
+                        font-size: 14px;
+                        margin-top: 5px;
+                    }
+
+                    .cast-character {
+                        color:cast-character;
+                        font-size: 12px;
+                    }
+    
+                }
+
+            }
+            
+           
+
         }
 
         @media (min-width: $breakpointMobile) {
@@ -121,13 +195,14 @@
 
             .line {
                 content: '';
-                background: radial-gradient(circle,$backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2, $backgroundcolor-gradient1, $backgroundcolor-gradient2);
+                background: radial-gradient(circle,$backgroundcolor-gradient1, $backgroundcolor-gradient2);
                 border-radius: $border-radius;
                 width: 100%;
                 height: 5px;
-                margin-top: $gap1;
-                margin-bottom: $gap1;
+                margin-top: $gap2;
+                margin-bottom: $gap2;
                 opacity: .8;
+
             }
 
             .flexRow {
@@ -149,15 +224,142 @@
                 }
             }
 
-            &:last-child {
+            .overview {
                 line-height: $line-height;
                 font-size: $font-size-paragraph;
                 font-family: $font-family-paragraph;
                 color: $color3;
             }
+
+            .cast-detail img {
+                height: 70px;
+                width: auto;
+            } 
             }
         }
  
+}
+.movie-review {
+    color: rgb(177, 171, 171);
+    margin-top: 20px;
+    font-family: $font-family-paragraph;
+
+    .no-review {
+        font-size: 20px;
+        font-family: $font-family-paragraph;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .review-content{
+        display: -webkit-box;
+        max-width: 300px;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        word-break: break-all;
+        line-height: $line-height;
+    }
+
+    .align-center {
+        text-align: center;
+
+        .review-title {
+            color: #d48f8f;
+            padding-bottom:$gap2; 
+            font-size: 20px;
+            font-family: $font-family-paragraph;
+        }
+    }
+    .review-list {
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-family-paragraph;
+
+        li {
+            padding-bottom: $gap2;
+
+            .reviewer-name {
+                padding-top: $gap5;
+                font-family: $font-family-paragraph;
+            }
+        }
+    }
+
+    @media (min-width: 768px){
+        .review-list.cols-3 > li {
+            width: 50%;
+
+            &:nth-last-child(-n+3) {
+                border-bottom: none;
+            }
+
+            @media (min-width: $breakpointDesktop) {
+                width: 33.33%;
+            }
+        }   
+    }
+
+
+    .review-list > li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .review-title{
+        font-size: 1.5rem;
+        padding-bottom: $gap2;
+        font-weight: bold;
+        font-family: $font-family-heading !important;
+    }
+
+    img {
+        border: 0;
+        height: 100px;
+        border-radius: 50%;
+        box-shadow: 1px 0px 8px 6px #353517;
+    }
+    .reviewer-name{
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+    .review-more a{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        &:hover {
+            color:#d48f8f;
+        } 
+    } 
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: $font-family-paragraph;
+
+    a {
+        display: inline;
+        border: 1px solid #d48f8f;
+        padding: $gap4;
+
+        &:hover {
+            color:#d48f8f;
+        }
+    }
+
+      
 }
 
 @media (min-width: $breakpointTablet) {
@@ -171,18 +373,21 @@
                 flex-direction: row;
                 gap: $gap1;
                 margin-bottom: $gap1;
+                width: 80%;
 
-                .single-movie-poster {
-                    max-width: 400px;
-
-                    img {
-                        width: 100%;
-                    }
-                }
-
-                .single-movie-info {
-                    max-width: 400px;
+                .single-movie-poster img{
+                    width: 400px;   
                 }
             }
         }  
+}
+
+@media (min-width: $breakpointDesktop) {
+    .single-movie-content {
+        width: 50%;
+    }
+    
+    .single-movie-info {
+        width: 50%;
+    }
 }
