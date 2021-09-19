@@ -105,8 +105,11 @@ section {
 body {
   line-height: 1;
   background-color: #000;
+  min-height: 100%;
 }
-
+html {
+  height: 100%;
+}
 ol,
 ul {
   list-style: none;

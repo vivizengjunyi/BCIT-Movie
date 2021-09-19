@@ -80,6 +80,7 @@
         .tagline {
             margin-top: $gap4;
             margin-bottom: $gap5;
+            font-style: italic;
         }
 
         .line {
@@ -151,6 +152,8 @@
                     justify-self: center;
                     align-items: center;
                     padding-right: $gap5;
+                    width: 100px;
+                    text-align: center;
 
                     img {
                         height: 90px;
@@ -241,8 +244,8 @@
 }
 .movie-review {
     color: rgb(177, 171, 171);
-    margin-top: 20px;
     font-family: $font-family-paragraph;
+    padding-top: $gap1;
 
     .no-review {
         font-size: 20px;
@@ -262,11 +265,11 @@
     }
 
     .align-center {
-        text-align: center;
+        
 
         .review-title {
             color: #d48f8f;
-            padding-bottom:$gap2; 
+            padding-bottom:40px; 
             font-size: 20px;
             font-family: $font-family-paragraph;
         }
@@ -348,6 +351,7 @@
     justify-content: center;
     width: 100%;
     font-family: $font-family-paragraph;
+    padding-bottom: 40px;
 
     a {
         display: inline;

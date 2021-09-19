@@ -53,6 +53,7 @@
         }
     }
 }
+
 .movieTitle2 {
     position: absolute;
     @include flex-center;
@@ -73,6 +74,6 @@
     }
 
     @media (min-width: $breakpointMobile) {
-        font-size: $font-size-paragraph-bigger;
+        font-size: 20px;
     }
 }

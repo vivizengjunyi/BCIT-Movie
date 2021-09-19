@@ -2,13 +2,10 @@ footer {
     background-color: $font-color2;
     color: $font-color1;
     padding: $gap2;
-    height: 50px;
+    height: 30px;
     width: 100%;
     @include flex-center;
-    bottom: 0;
-   
-
     p {
-        font-size: $font-size-paragraph;   
+        font-size: 15px;   
     }
 }

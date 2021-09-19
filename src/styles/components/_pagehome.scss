@@ -239,16 +239,15 @@
         
             &:hover .movieInfoSection {
                 height: 400px;
-
-                @media (min-width: $breakpointMobile) {
-                    height: 500px;
-                }
             }
         }           
     }
 }
-
-@media (min-width: $breakpointMobile) {
+.main {
+    height: 100%;
+    min-height: 85vh;
+}
+/* @media (min-width: $breakpointMobile) {
     .movies-container {
 
         .movie-card {
@@ -284,4 +283,5 @@
         }
 
     }
-}
+} */
+
