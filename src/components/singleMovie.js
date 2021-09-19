@@ -114,7 +114,7 @@ const SingleMovie = ({ movieObj, movieReview, fecthReview }) => {
                         <p className="review-title">Reviews</p>
                     </div>
                     {reviews.length === 0 ? 
-                    <p className='no-review'>No reviews.</p> :
+                    <p className='no-review'>No reviews so far.</p> :
                     <ul className="review-list cols-3 cols-1-xs align-center">
                         {
                             reviews && reviews.slice(0, currentShowSize).map(review => {
