@@ -54,7 +54,7 @@
             color: $font-color1;
             font-size: $icon-size;
             cursor: pointer;
-            margin-right: 10px;
+            margin-right: $gap5;
             &:hover {
                 color: $backgroundcolor-gradient1;
             }
@@ -109,14 +109,13 @@
 
         ul {
             flex-direction: row;
-            // width: 300px;
             justify-content: space-between;
             &:last-child {
                 padding-bottom: unset;
             }
             li{
                 font-size: $font-size-paragraph;
-                margin-right: 20px;
+                margin-right: $gap1;
             }
         }
         @media (min-width: $breakpointTablet) {
@@ -131,7 +130,7 @@
     display: flex;
     align-items: center;
     input {
-        margin-right: 10px;
+        margin-right: $gap5;
     }
 }
 .outerContainer {
@@ -189,7 +188,7 @@
             .slider-title {
                 position: absolute;
                 bottom: 50px;
-                left: 30px;
+                left: $gap2;
                 font-size: 2rem;
                 display: none;
                 color:$font-color1;
@@ -210,7 +209,7 @@
                 z-index: 10;
                 color: $font-color2;
                 font-size: $icon-size;
-                left: 5px;
+                left: $gap4;
                 background-color: $font-color1;
                 border-radius: 50%;
                 cursor: pointer;

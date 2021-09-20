@@ -16,7 +16,7 @@
 
         @media (min-width: $breakpointDesktop) {
             width: 700px;
-            padding: 50px;
+            padding: $gap6;
         }
 
         .about-gomovie-name {
