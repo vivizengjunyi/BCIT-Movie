@@ -35,7 +35,7 @@ const Slider = () => {
         const nextSlide = () => {
             setCurrent(current => (current === length - 1 ? 0 : current + 1));
         }
-        timeout.current = setTimeout(nextSlide, 50000);
+        timeout.current = setTimeout(nextSlide, 5000);
 
         return function () {
             if (timeout.current) {
