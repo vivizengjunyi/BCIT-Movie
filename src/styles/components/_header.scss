@@ -1,5 +1,5 @@
 .flex-column {
-    background-color: $font-color2;
+    background-color: $color-6;
     display: flex;
     position:absolute;
     top: 0;
@@ -21,7 +21,7 @@
             transform: translateX(10px);
 
             a:hover {
-                color: $backgroundcolor-gradient1;
+                color: $color-4;
                 transform: scale(1.1);
             }
 
@@ -40,29 +40,29 @@
         }
 
         .burgerMenuIcon {
-            color: $font-color1;
+            color: $color-1;
             font-size: $icon-size;
             cursor: pointer;
 
             &:hover {
-                color: $backgroundcolor-gradient1;
+                color: $color-2;
             }
 
         }
 
         .closeMenuIcon {
-            color: $font-color1;
+            color: $color-1;
             font-size: $icon-size;
             cursor: pointer;
             margin-right: $gap5;
             &:hover {
-                color: $backgroundcolor-gradient1;
+                color: $color-2;
             }
         }
     }
 
     nav {
-        background-color: $font-color2;
+        background-color: $color-6;
         height: auto;
         box-sizing: border-box;
         ul {
@@ -85,7 +85,7 @@
                 }
 
                 a:hover {
-                    color: $backgroundcolor-gradient1;
+                    color: $color-2;
                 }
             }
 
@@ -95,7 +95,7 @@
 
                 &:hover{
                     transform: $scale;
-                    color: $backgroundcolor-gradient1;
+                    color: $color-2;
                 }
             }
         }
@@ -146,8 +146,6 @@
         top: 0;
         left: 0;
         width: 100%;
-        
-        
 
         .sliderContainer {
             width: 100%;
@@ -191,12 +189,13 @@
                 left: $gap2;
                 font-size: 2rem;
                 display: none;
-                color:$font-color1;
-
-                &:hover {
-                    transform: scale(1.1);
-                    color: $color-gradient1;
-                }
+                color:$color-5;
+                background-color: $color-1;
+                font-family: $font-family-heading;
+                padding: 1rem;
+                border-radius: 3px;
+                border: 1px solid $color-1;
+                /* opacity:0.8; */
 
                 @media (min-width: $breakpointTablet) {
                     display: block;
@@ -207,7 +206,7 @@
                 position: absolute;
                 top: 50%;
                 z-index: 10;
-                color: $font-color2;
+                color: $color-5;
                 font-size: $icon-size;
                 left: $gap4;
                 background-color: $font-color1;
@@ -217,7 +216,7 @@
 
                 &:hover {
                     transform:$scale;
-                    color: $backgroundcolor-gradient1;
+                    color: $color-4;
                 }
 
                 @media (min-width: $breakpointTablet) {
@@ -229,7 +228,7 @@
                 position: absolute;
                 top: 50%;
                 z-index: 10;
-                color: $font-color2;
+                color: $color-5;
                 font-size: $icon-size;
                 right: 5px;
                 top: 50%;
@@ -240,7 +239,7 @@
 
                 &:hover {
                     transform:$scale;
-                    color: $backgroundcolor-gradient1;
+                    color: $color-4;
                 }
 
                 @media (min-width: $breakpointTablet) {

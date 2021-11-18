@@ -4,13 +4,13 @@
     padding: 0;
     display: flex;
     justify-content: center;
-    background: linear-gradient(to bottom, $backgroundcolor-gradient1, $backgroundcolor-gradient2);
+    background: $color-1;
     background-position: 50%, 50%;
     background-size: cover;
     position: relative;
     padding-top: $gap3;
     padding-bottom: $gap3;
-    color: $font-color1;
+    color: $color-6;
     margin-top: $gap2;
     font-family: $font-family-paragraph;
 
@@ -53,7 +53,7 @@
             font-family: $font-family-heading;
             padding-bottom: $gap5;
             line-height: $line-height-bigger;
-            color: $font-color3;
+            color: $color-6;
             font-weight: bold;
         }
 
@@ -67,9 +67,9 @@
         }
 
         .genres {
-            color: $color-gradient1;
+            color: $color-5;
             font-size: 15px;
-            font-family: $font-family-paragraph;
+            font-family: $font-family-heading;
             display: flex;
             flex-direction: row;
             gap: $gap5;
@@ -81,11 +81,12 @@
             margin-top: $gap4;
             margin-bottom: $gap5;
             font-style: italic;
+            font-family: $font-family-heading;
         }
 
         .line {
             content: '';
-            background: radial-gradient(circle,$backgroundcolor-gradient1, $backgroundcolor-gradient2, );
+            background: $color-4;
             border-radius: $border-radius;
             width: 100%;
             height: $gap4;
@@ -98,8 +99,8 @@
             @include flex-row-spcebetween;
             padding-bottom: $gap5;
             font-size: 15px;
-            font-family: $font-family-paragraph;
-            color: $font-color1;
+            font-family: $font-family-heading;
+            color: $color-6;
 
             .stick {
                 display: flex;
@@ -107,7 +108,7 @@
                 
                 .start {
                     vertical-align:bottom;
-                    color: $color1;
+                    color: $color-6;
                     font-size: 15px;
                 }
             }
@@ -118,7 +119,7 @@
             font-family: $font-family-heading;
             font-family:30px;
             padding-bottom: $gap5;
-            color: $font-color3;
+            color: $color-6;
             font-weight: bold;
             padding-top: 10px;
         }
@@ -127,7 +128,7 @@
             line-height: $line-height;
             font-size: 15px;
             font-family: $font-family-paragraph;
-            color: $color3;
+            color: $color-5;
         }
 
         .cast {
@@ -136,7 +137,7 @@
                 font-size: $font-size-paragraph;
                 padding-top: $gap1;
                 font-family: $font-family-heading;
-                color: $font-color3;
+                color: $color-6;
                 font-weight: bold;
             }
 
@@ -161,13 +162,13 @@
                     }
 
                     .cast-name {
-                        color:$font-color3;
+                        color:$color-6;
                         font-size: 14px;
                         margin-top: $gap4;
                     }
 
                     .cast-character {
-                        color:cast-character;
+                        color:$color-4;
                         font-size: 12px;
                     }
     
@@ -189,7 +190,7 @@
                 font-family: $font-family-heading;
                 padding-bottom: $gap5;
                 line-height: $line-height-bigger;
-                color: $font-color1;
+                color: $color-6;
             }
 
             .icon-fav {
@@ -198,7 +199,7 @@
 
             .line {
                 content: '';
-                background: radial-gradient(circle,$backgroundcolor-gradient1, $backgroundcolor-gradient2);
+                background: $color-2;
                 border-radius: $border-radius;
                 width: 100%;
                 height: $gap4;
@@ -213,7 +214,7 @@
                 padding-bottom: $gap5;
                 font-size: $font-size-paragraph;
                 font-family: $font-family-paragraph;
-                color: $font-color1;
+                color: $color-5;
 
                 .stick {
                     display: flex;
@@ -231,7 +232,7 @@
                 line-height: $line-height;
                 font-size: $font-size-paragraph;
                 font-family: $font-family-paragraph;
-                color: $color3;
+                color: $color-5;
             }
 
             .cast-detail img {
@@ -268,7 +269,7 @@
         
 
         .review-title {
-            color: #d48f8f;
+            color: $color-1;
             padding-bottom:$gap3; 
             font-size: 20px;
             font-family: $font-family-paragraph;
@@ -313,8 +314,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-right: 1px solid rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        color: $color-1;
+        
     }
     .review-title{
         font-size: 1.5rem;
@@ -332,6 +333,7 @@
     .reviewer-name{
         font-size: 1.2rem;
         margin-bottom: $gap4;
+        color: $color-4;
     }
     .review-more a{
         display: flex;
@@ -341,7 +343,7 @@
         margin-bottom: $gap4;
 
         &:hover {
-            color:$color4;
+            color:$color-4;
         } 
     } 
 }
@@ -355,11 +357,13 @@
 
     a {
         display: inline;
-        border: 1px solid $color4;
+        border: 1px solid $color-1;
+        border-radius: 3px;
         padding: $gap4;
 
         &:hover {
-            color:$color4;
+            background-color:$color-6;
+            color: $color-1;
         }
     }
 
@@ -395,3 +399,48 @@
         width: 50%;
     }
 }
+
+.movie-video {
+    background-color: $color-1;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+    margin: 0;
+    padding: 0;
+    transform:translateY(-1px);
+     
+    iframe {
+        width:300px;
+        height:171px;
+        padding:1rem;
+
+        &:nth-child(2) {
+            display:none;
+        }
+    }
+}
+    @media (min-width: $breakpointTablet) {
+        .movie-video {
+            
+            iframe {
+                &:nth-child(2) {
+                    display: block !important;
+                }
+            }
+        }
+        
+    }
+
+    @media (min-width: $breakpointDesktop) {
+        .movie-video {
+            iframe {
+                width:560px;
+                height:320px;
+                padding:1rem;
+            }
+        }
+        
+    }
+

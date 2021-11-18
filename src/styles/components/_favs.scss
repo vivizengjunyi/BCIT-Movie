@@ -1,15 +1,16 @@
 .favs-Section {
-    background: linear-gradient(to left, $backgroundcolor-gradient1, $backgroundcolor-gradient2);
+    background: $color-1;
     background-position: 50%, 50%;
     background-size: cover;
     position: relative;
     padding-top: $gap1;
     padding-bottom: $gap3;
     margin-top: 60px;
+    min-height: 100vh;
     
     .favs-paragraph {
         font-size: $font-size-paragraph-bigger;
-        color: $font-color1;
+        color: $color-5;
         margin-left: $gap1;
         margin-bottom: $gap2;
        
@@ -39,7 +40,7 @@
 
             p {
                 font-size: $font-size-paragraph-smaller;
-                color: $font-color1;
+                color: $color-4;
 
                 @media (min-width: $breakpointMobile) {
                     font-size: $font-size-paragraph;
@@ -48,7 +49,7 @@
                 a {
                     padding-left: $gap4;
                     text-decoration: underline;
-                    color:$color-gradient1;
+                    color:$color-4;
                 }
         }
     }
@@ -59,17 +60,19 @@
     @include flex-center;
     width: 100%;
     height: 70px;
-    bottom: $gap2;
+    bottom: 0;
     font-size: $font-size-paragraph;
     color: $font-color1;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $color-6;
     padding: $gap1;
     font-family: $font-family-heading;
+    border-bottom-left-radius: $border-radius-small;
+    border-bottom-right-radius: $border-radius-small;
 
     a {
         &:hover {
-            transform: scale(1.1);
-            color: $color-gradient1;
+            /* transform: scale(1.1); */
+            color: $color-4;
         }
     }
 

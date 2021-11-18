@@ -1,13 +1,13 @@
 .page-about {
-    background: linear-gradient(to left, $backgroundcolor-gradient2, $backgroundcolor-gradient1);
-    color: $font-color1;
+    background: $color-1;
+    color: $color-6;
     margin-top: 60px;
-    height: 85vh;
+    height: 100vh; 
     @include column-center;
 
     .about-content {
         width: 300px;
-        border: 1px solid $font-color1;
+        border: 1px solid $color-2;
         padding: $gap3;
 
         @media (min-width: $breakpointMobile) {
@@ -32,7 +32,7 @@
         p {
             line-height: $line-height;
             font-size: $font-size-paragraph-smaller;
-            color: $color3;
+            color: $color-4;
             font-family: $font-family-paragraph;
 
             @media (min-width: $breakpointMobile) {

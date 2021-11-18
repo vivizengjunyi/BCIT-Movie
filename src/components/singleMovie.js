@@ -4,6 +4,7 @@ import { AiFillStar } from 'react-icons/ai';
 import { BsFillHeartFill } from 'react-icons/bs';
 import { BsHeart } from 'react-icons/bs';
 import globalAppState from '../store/globalAppState';
+import { API_TOKEN} from '../globals/globalVariables';
 
 
 const SingleMovie = ({ movieObj, movieReview, fecthReview }) => {
@@ -17,15 +18,19 @@ const SingleMovie = ({ movieObj, movieReview, fecthReview }) => {
     }
 
     const { getFavs, actions } = globalAppState;
-    const [favs, setFavs] = useState([])
-    const [reviews, setReviews] = useState([])
-    const [currentPage, setCurrentPage] = useState(1)
-    const [totalPage, setTotalPage] = useState(1)
-    const [totalSize, setTotalSize] = useState(0)
-    const [currentShowSize, setCurrentShowSize] = useState(3)
+    const [favs, setFavs] = useState([]);
+    const [reviews, setReviews] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPage, setTotalPage] = useState(1);
+    const [totalSize, setTotalSize] = useState(0);
+    const [currentShowSize, setCurrentShowSize] = useState(3);
+    const [video, setVideo] = useState();
+    const [similar, setSimilar] = useState();
+
     useEffect(() => {
         setFavs(getFavs());
     }, []);
+
     useEffect(() => {
         if(!movieReview) return;
         setReviews(reviews => {
@@ -38,22 +43,67 @@ const SingleMovie = ({ movieObj, movieReview, fecthReview }) => {
         setTotalPage(movieReview.total_pages);
         setTotalSize(movieReview.total_results)
     }, [movieReview]);
+
     const handleSetFavs = (movieObj, isFave) => {
         const favs = actions[isFave ? 'removeFav' : 'addFav'](movieObj);
         setFavs(favs);
     }
+
     const getReviewAvatar = (review) => {
         const avatar = review.author_details.avatar_path;
         return avatar ? avatar.indexOf('http') > 0 ?
             avatar.substr(1) :
             `https://image.tmdb.org/t/p/w200/${avatar}` : 'https://avatars.dicebear.com/api/avataaars/.svg';
     }
+
     const loadMore = () => {
         if(currentShowSize + 3 > reviews.length && currentPage < totalPage){
             fecthReview(currentPage + 1)
         }
         setCurrentShowSize(Math.min(currentShowSize + 3, totalSize))
     }
+
+useEffect(() => {
+    const fetchMoviesVideo = async () => {
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${movieObj.id}/videos?language=en-US&page=1`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + API_TOKEN
+            }
+        });
+
+        let rawVideoData = await res.json();
+        setVideo(rawVideoData);
+
+    }
+    if(movieObj) {
+        fetchMoviesVideo();
+    }
+    
+}, [movieObj]);
+
+/* useEffect(() => {
+    const fetchMoviesVideo = async () => {
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${movieObj.id}/similar?language=en-US&page=1`, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + API_TOKEN
+            }
+        });
+
+        let rawSimilarData = await res.json();
+        rawSimilarData = rawSimilarData.results.splice(0, 6);
+        setSimilar(rawSimilarData);
+
+    }
+    if(movieObj) {
+        fetchMoviesVideo();
+    }
+    
+}, [movieObj]); */
+
     return (
         <div>
             <div className='single-movie'>
@@ -107,7 +157,22 @@ const SingleMovie = ({ movieObj, movieReview, fecthReview }) => {
                     </div>
                 </div>
             </div>
-
+            {video && video.results[0] && video.results[1] &&
+            <div className='movie-video'>
+                <iframe
+                src={`https://www.youtube.com/embed/${video.results[0]?.key}?rel=0`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen></iframe>
+                <iframe
+                src={`https://www.youtube.com/embed/${video.results[1]?.key}?rel=0`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen></iframe>
+            </div>
+            }
             <div className='movie-review'>
                 <div className="container">
                     <div className="align-center">
@@ -135,13 +200,19 @@ const SingleMovie = ({ movieObj, movieReview, fecthReview }) => {
                     }
                     
                 </div>
-            </div>
-
-            {
+                {
                 currentShowSize < totalSize  && <div className="load-more">
                     <a href="javascript:void(0)" onClick={loadMore}>load more</a>
                 </div>
             }
+            </div>
+            <div className='similar-movie'>
+                {similar &&
+                    similar.map((singleSimilar,i) => 
+                        <div>{singleSimilar}</div>
+                    )
+                }
+            </div>
         </div>
     )
 }

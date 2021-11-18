@@ -20,7 +20,7 @@ function PageHome() {
             });
 
             let rawMovieData = await res.json();
-            rawMovieData = rawMovieData.results.splice(0, 12);
+            rawMovieData = rawMovieData.results.splice(0, 15);
             setMovieData(rawMovieData);
 
         }

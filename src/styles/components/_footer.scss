@@ -1,10 +1,11 @@
 footer {
-    background-color: $font-color2;
-    color: $font-color1;
+    background-color: $color-6;
+    color: $color-1;
     padding: $gap2;
     height: $gap2;
     width: 100%;
     @include flex-center;
+    font-family: $font-family-heading;
     p {
         font-size: $font-size-footer;   
     }
