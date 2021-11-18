@@ -244,10 +244,10 @@
  
 }
 .movie-review {
-    color: rgb(177, 171, 171);
+    color: $color-1;
     font-family: $font-family-paragraph;
     padding-top: $gap1;
-
+    
     .no-review {
         font-size: 15px;
         font-family: $font-family-paragraph;
