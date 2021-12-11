@@ -24,12 +24,12 @@ const Header = () => {
     return (
         <header>
             {
-                (location.pathname === '/' || location.pathname === '/index.html' ||  location.pathname.indexOf('/sort/') > -1) && <Slider />
+                (location.pathname === '/gomovie/' || location.pathname === '/gomovie/index.html' ||  location.pathname.indexOf('/gomovie/sort/') > -1) && <Slider />
             }
             <div class='flex-column'>
                 <div className='flex-row'>
                     <div className="brand">
-                        <NavLink to="/">{title}</NavLink>
+                        <NavLink to="/gomovie/">{title}</NavLink>
                     </div>
                     <Nav show={true} />
                     {burgerMenuShow === true ? (

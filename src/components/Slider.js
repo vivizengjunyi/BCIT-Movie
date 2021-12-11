@@ -72,7 +72,7 @@ const Slider = () => {
             {singleSliderMovies.map((singleSliderMovie, index) => (
                 index === current && (
                     <div className='sliderWrapper'>
-                        <Link to={`/movie/${singleSliderMovie.id}`}>
+                        <Link to={`/gomovie/movie/${singleSliderMovie.id}`}>
                             <div key={index} className='sliderContainer' style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original/${singleSliderMovie.backdrop_path})` }}>
                                 <img src={'https://image.tmdb.org/t/p/w500/' + singleSliderMovie.poster_path} alt={singleSliderMovie.title} className="slider-img" />
                                 <div className="slider-title">{singleSliderMovie.title}</div>

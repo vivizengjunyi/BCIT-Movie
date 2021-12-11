@@ -33,7 +33,7 @@ const NavSort = ({ categoryId = 'popular' }) => {
                     {
                         tabs.map(tab => (
                             <li>
-                                <NavLink to={'/sort/' + tab.categoryId}>{tab.text}</NavLink>
+                                <NavLink to={'/gomovie/sort/' + tab.categoryId}>{tab.text}</NavLink>
                             </li>
                         ))
                     }

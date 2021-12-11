@@ -22,7 +22,7 @@ const PageFavs = () => {
                     {favs.map((oneMovie, i) => <MovieCard key={i} movieObj={oneMovie} onUpdate={onUpdate} />)}
                 </section> :
                 <section className='no-favs'>
-                    <p>You didn't favorite any movies, please<NavLink to='/'>select now.</NavLink></p>
+                    <p>You didn't favorite any movies, please<NavLink to='/gomovie/'>select now.</NavLink></p>
                 </section>
         
         }

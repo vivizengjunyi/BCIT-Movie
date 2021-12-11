@@ -14,13 +14,13 @@ function AppRouter() {
         <Header />
         <main className="main">
           <Switch>
-            <Route path="/" exact><PageHome /></Route>
-            <Route path="/index.html" exact><PageHome /></Route>
-            <Route path="/sort/:categoryId"><PageHome /></Route>
-            <Route path="/about"><PageAbout /></Route>
-            <Route path="/favs"><PageFavs /></Route>
-            <Route path="/search"><PageSearch /></Route>
-            <Route path="/movie/:id"><PageSingleMovie /></Route>
+            <Route path="/gomovie/" exact><PageHome /></Route>
+            <Route path="/gomovie/index.html" exact><PageHome /></Route>
+            <Route path="/gomovie/sort/:categoryId"><PageHome /></Route>
+            <Route path="/gomovie/about"><PageAbout /></Route>
+            <Route path="/gomovie/favs"><PageFavs /></Route>
+            <Route path="/gomovie/search"><PageSearch /></Route>
+            <Route path="/gomovie/movie/:id"><PageSingleMovie /></Route>
           </Switch>
         </main>
         <Footer />

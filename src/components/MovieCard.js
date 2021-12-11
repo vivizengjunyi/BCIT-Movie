@@ -49,13 +49,13 @@ function MovieCard({ movieObj, onUpdate, showDetail }) {
                             </div>
                             <p className='overviewTitle'>Overview:</p>
                             <p className='overview'>{movieObj.overview}</p>
-                            <Link to={`/movie/${movieObj.id}`} >More Info<BiRightArrowAlt /></Link>
+                            <Link to={`/gomovie/movie/${movieObj.id}`} >More Info<BiRightArrowAlt /></Link>
                         </div>
 
                     </div> : null
                 }
 
-                <p className='movieTitle2'><Link to={`/movie/${movieObj.id}`} >{movieObj.title}</Link></p>
+                <p className='movieTitle2'><Link to={`/gomovie/movie/${movieObj.id}`} >{movieObj.title}</Link></p>
             </div>
 
         </div>
