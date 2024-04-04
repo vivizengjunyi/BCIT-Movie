@@ -16,7 +16,7 @@ const Nav = ({ toggle, show = false }) => {
             if (searchKey.trim() === '') {
                 setShowSearch(false);
             } else {
-                history.push("/gomovie/search?query=" + searchKey);
+                history.push("/search?query=" + searchKey);
             }
         }
     }
@@ -24,14 +24,14 @@ const Nav = ({ toggle, show = false }) => {
         <nav className={`dropdownMenu ${show ? 'show-nav' : ''}`}>
             <ul>
                 <li>
-                    <NavLink to="/gomovie/" onClick={handleClick}>Home</NavLink>
+                    <NavLink to="/" onClick={handleClick}>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/gomovie/favs" onClick={handleClick}>Favs</NavLink>
+                    <NavLink to="/favs" onClick={handleClick}>Favs</NavLink>
 
                 </li>
                 <li>
-                    <NavLink to="/gomovie/about" onClick={handleClick}>About</NavLink>
+                    <NavLink to="/about" onClick={handleClick}>About</NavLink>
                 </li>
 
                 <li className="search">

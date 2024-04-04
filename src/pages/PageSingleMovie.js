@@ -23,7 +23,7 @@ const PageSingleMovie = () => {
         setMovieData(rawMovieData);
     }
     const fecthReview = async (page=1) => {
-        const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/reviews?page=${page}`, {
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${id}/reviews?language=en-US&page=${page}`, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
